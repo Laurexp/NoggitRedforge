@@ -3,20 +3,25 @@ This software is open source software licensed under GPL3, as found in
 the COPYING file.
 
 # NOGGIT REDFORGE #
-Welcome to **Noggit Redforge**, a fork with advanced procedural terrain generation and vertex color lightmapping!
-¡Bienvenido a **Noggit Redforge**, un fork con generación avanzada de terreno procedural y lightmapping por color de vértices!
+¡Bienvenido a **Noggit Redforge**, la evolución definitiva para el diseño de mundos en World of Warcraft! Este fork de Noggit integra potentes herramientas de generación procedural y utilidades avanzadas que transforman por completo el flujo de trabajo en la creación de mapas (ADT).
 
-## New Features / Nuevas Características (ESP/ENG)
-* **Vertex Color Lightmap Tool**: Procedurally calculate and inject dynamic, realistic lighting and shadows directly into the WoW ADT map geometry using vertex colors.
-  * *Herramienta de Lightmap por Color de Vértices: Calcula de forma procedural e inyecta iluminación y sombras dinámicas y realistas directamente en la geometría del mapa ADT de WoW usando colores de vértice.*
-* **Interactive Sky Vault**: Adjust azimuth and elevation visually by dragging the sun in a dedicated interactive 2D radar widget.
-  * *Bóveda Celeste Interactiva: Ajusta el azimuth y la elevación visualmente arrastrando el sol en un radar 2D interactivo dedicado.*
-* **Dynamic Preview**: Tweak Ambient, Intensity, Step precision, and Z-Scale directly and test them instantly in real time via heatmap.
-  * *Vista Previa Dinámica: Ajusta el ambiente, intensidad, precisión de pasos y escala Z directamente, y pruébalos al instante en tiempo real a través de un mapa de calor.*
-* **Custom Presets**: Save, load, and manage your favorite lighting presets into the system's registry persistently.
-  * *Ajustes Preestablecidos: Guarda, carga y administra tus configuraciones de iluminación favoritas de forma persistente.*
-* **Quick Clear**: One-click wipe tool to return map lighting to absolute neutral values without breaking your workflow.
-  * *Limpieza Rápida: Herramienta de borrado en un clic para devolver la iluminación del mapa a valores neutrales absolutos sin interrumpir tu flujo de trabajo.*
+## 🔥 Nuevas Características Exclusivas
+
+### 🌍 Generación Procedural Avanzada
+* **Diseño Procedural Inteligente**: Dale vida a tus terrenos utilizando algoritmos matemáticos avanzados (Ruido de Perlin, Voronoi, fractales...) para generar relieves, montañas y valles hiperrealistas en cuestión de segundos.
+* **Texturizado Automático por Capas**: Asigna y pinta texturas inteligentemente según la altitud y la pendiente utilizando Alphamaps integrados, automatizando horas de tedioso trabajo de pintura manual.
+
+### ☀️ Sistema de Iluminación Dinámico (Vertex Color Lightmap)
+Calcula e inyecta iluminación y sombras espectaculares directamente en la geometría del mapa usando colores de vértice.
+* **Bóveda Celeste Interactiva**: Ajusta la posición del Sol (Azimuth y Elevación) de forma intuitiva arrastrándolo en un radar 2D interactivo.
+* **Control Absoluto en Tiempo Real**: Ajusta el ambiente, la intensidad, la precisión de los cálculos y la escala Z visualizando un mapa de calor dinámico para probar tus luces antes de aplicarlas.
+* **Limpieza Rápida (Clear)**: Herramienta de borrado a un clic para devolver la iluminación de los vértices a sus valores neutrales absolutos sin destruir tu mapa.
+
+### 💾 Sistema de Presets Inteligente
+* **Guarda tus Ajustes**: Múltiples funcionalidades persistentes te permiten guardar tus propias configuraciones y paletas en todas estas nuevas herramientas. ¡Carga al instante el preset perfecto de luces de atardecer o la orografía de tus montañas favoritas sin tener que recordar los números!
+
+### 🏰 Clonador de Assets y Estructuras
+* **Copia y Poblado Armonizado**: Una nueva y revolucionaria herramienta diseñada para copiar assets, vegetación y estructuras desde otros mapas para rellenar tus propios mundos de forma completamente armonizada y orgánica, logrando paisajes dignos de Blizzard con un par de clics.
 
 # BUILDING #
 This project requires CMake to be built. 
