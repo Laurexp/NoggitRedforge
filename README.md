@@ -2,6 +2,16 @@
 This software is open source software licensed under GPL3, as found in
 the COPYING file.
 
+# NOGGIT REDFORGE #
+Welcome to **Noggit Redforge**, a fork with advanced procedural terrain generation and vertex color lightmapping!
+
+## New Features
+* **Vertex Color Lightmap Tool**: Procedurally calculate and inject dynamic, realistic lighting and shadows directly into the WoW ADT map geometry using vertex colors.
+  * **Interactive Sky Vault**: Adjust azimuth and elevation visually by dragging the sun in a dedicated interactive 2D radar widget.
+  * **Dynamic Preview**: Tweak Ambient, Intensity, Step precision, and Z-Scale directly and test them instantly in real time via heatmap.
+  * **Custom Presets**: Save, load, and manage your favorite lighting presets into the system's registry persistently.
+  * **Quick Clear**: One-click wipe tool to return map lighting to absolute neutral values without breaking your workflow.
+
 # BUILDING #
 This project requires CMake to be built. 
 
