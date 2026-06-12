@@ -4,13 +4,19 @@ the COPYING file.
 
 # NOGGIT REDFORGE #
 Welcome to **Noggit Redforge**, a fork with advanced procedural terrain generation and vertex color lightmapping!
+¡Bienvenido a **Noggit Redforge**, un fork con generación avanzada de terreno procedural y lightmapping por color de vértices!
 
-## New Features
+## New Features / Nuevas Características (ESP/ENG)
 * **Vertex Color Lightmap Tool**: Procedurally calculate and inject dynamic, realistic lighting and shadows directly into the WoW ADT map geometry using vertex colors.
-  * **Interactive Sky Vault**: Adjust azimuth and elevation visually by dragging the sun in a dedicated interactive 2D radar widget.
-  * **Dynamic Preview**: Tweak Ambient, Intensity, Step precision, and Z-Scale directly and test them instantly in real time via heatmap.
-  * **Custom Presets**: Save, load, and manage your favorite lighting presets into the system's registry persistently.
-  * **Quick Clear**: One-click wipe tool to return map lighting to absolute neutral values without breaking your workflow.
+  * *Herramienta de Lightmap por Color de Vértices: Calcula de forma procedural e inyecta iluminación y sombras dinámicas y realistas directamente en la geometría del mapa ADT de WoW usando colores de vértice.*
+* **Interactive Sky Vault**: Adjust azimuth and elevation visually by dragging the sun in a dedicated interactive 2D radar widget.
+  * *Bóveda Celeste Interactiva: Ajusta el azimuth y la elevación visualmente arrastrando el sol en un radar 2D interactivo dedicado.*
+* **Dynamic Preview**: Tweak Ambient, Intensity, Step precision, and Z-Scale directly and test them instantly in real time via heatmap.
+  * *Vista Previa Dinámica: Ajusta el ambiente, intensidad, precisión de pasos y escala Z directamente, y pruébalos al instante en tiempo real a través de un mapa de calor.*
+* **Custom Presets**: Save, load, and manage your favorite lighting presets into the system's registry persistently.
+  * *Ajustes Preestablecidos: Guarda, carga y administra tus configuraciones de iluminación favoritas de forma persistente.*
+* **Quick Clear**: One-click wipe tool to return map lighting to absolute neutral values without breaking your workflow.
+  * *Limpieza Rápida: Herramienta de borrado en un clic para devolver la iluminación del mapa a valores neutrales absolutos sin interrumpir tu flujo de trabajo.*
 
 # BUILDING #
 This project requires CMake to be built. 
