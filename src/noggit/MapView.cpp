@@ -61,6 +61,7 @@
 #include <noggit/ToolDrawParameters.hpp>
 #include <noggit/tools/RaiseLowerTool.hpp>
 #include <noggit/tools/FlattenBlurTool.hpp>
+#include <noggit/tools/PathTool.hpp>
 #include <noggit/tools/TexturingTool.hpp>
 #include <noggit/tools/HoleTool.hpp>
 #include <noggit/tools/AreaTool.hpp>
@@ -74,6 +75,7 @@
 #include <noggit/tools/ScriptingTool.hpp>
 #include <noggit/tools/ChunkTool.hpp>
 #include <noggit/tools/AreaTriggerTool.hpp>
+#include <noggit/tools/ScatterTool.hpp>
 #include <noggit/StringHash.hpp>
 #include <noggit/application/NoggitApplication.hpp>
 
@@ -293,7 +295,9 @@ void MapView::set_editing_mode(editing_mode mode)
     }
   }
 
-  _world->reset_selection();
+  if (mode != editing_mode::scatter) {
+      _world->reset_selection();
+  }
   emit rotationChanged();
 
   if (!ui_hidden)
@@ -2428,12 +2432,14 @@ void MapView::createGUI()
   _tools.emplace_back(std::make_unique<Noggit::RaiseLowerTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::FlattenBlurTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::TexturingTool>(this))->setupUi(_tool_panel_dock);
+  _tools.emplace_back(std::make_unique<Noggit::PathTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::HoleTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::AreaTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::ImpassTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::WaterTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::VertexPainterTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::ObjectTool>(this))->setupUi(_tool_panel_dock);
+  _tools.emplace_back(std::make_unique<Noggit::ScatterTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::MinimapTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::StampTool>(this))->setupUi(_tool_panel_dock);
   _tools.emplace_back(std::make_unique<Noggit::LightTool>(this))->setupUi(_tool_panel_dock);

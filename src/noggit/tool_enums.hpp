@@ -77,6 +77,8 @@ enum class editing_mode
   scripting = 12,
   chunk = 13,
   area_trigger = 14,
+  scatter = 15,
+  path = 16,
 };
 
 enum water_opacity

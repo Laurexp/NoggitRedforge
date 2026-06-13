@@ -109,6 +109,7 @@
 #include <noggit/ui/tools/NodeEditor/Nodes/Data/Image/ImageBlendOpenGLNode.hpp>
 #include <noggit/ui/tools/NodeEditor/Nodes/Data/Image/ImageSetRegionNode.hpp>
 #include <noggit/ui/tools/NodeEditor/Nodes/Data/Image/ImageGetRegionNode.hpp>
+#include <noggit/ui/tools/NodeEditor/Nodes/Data/Image/ImageGenerateLightmapNode.hpp>
 
 #include <noggit/ui/tools/NodeEditor/Nodes/Data/Noise/NoisePerlinNode.hpp>
 #include <noggit/ui/tools/NodeEditor/Nodes/Data/Noise/NoiseToImageNode.hpp>
@@ -357,6 +358,7 @@ namespace Noggit
           ret->registerModel<ImageBlendOpenGLNode>("Data//Image");
           ret->registerModel<ImageSetRegionNode>("Data//Image");
           ret->registerModel<ImageGetRegionNode>("Data//Image");
+          ret->registerModel<ImageGenerateLightmapNode>("Data//Image");
 
           // String
           ret->registerModel<StringEndsWithNode>("Data//String");

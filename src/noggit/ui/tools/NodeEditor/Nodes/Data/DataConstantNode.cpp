@@ -39,7 +39,6 @@ DataConstantNode::DataConstantNode()
      {
        setCaption(_type->currentText());
        deletePort(PortType::In, 0);
-       deleteDefaultWidget(PortType::In, 0);
        deletePort(PortType::Out, 0);
 
        auto& type_id = _type_map.at(_type->currentText().toStdString());

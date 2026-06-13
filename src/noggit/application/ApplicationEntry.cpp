@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
   QCoreApplication::setAttribute(Qt::AA_UseDesktopOpenGL);
   QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication q_application (argc, argv);
-  q_application.setApplicationName ("Noggit");
+  q_application.setApplicationName ("Noggit Isaac Redforged");
   q_application.setOrganizationName ("Noggit");
 
   auto parser = ProcessCommandLine();

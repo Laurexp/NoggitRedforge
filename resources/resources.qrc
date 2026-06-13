@@ -60,3 +60,5 @@
 	  <file alias="line_fs">../src/noggit/rendering/glsl/line_frag.glsl</file>
     </qresource>
 </RCC>
+
+

@@ -44,6 +44,7 @@ namespace Noggit::Ui
     class minimap_widget;
     class settings;
     class about;
+    class ProceduralToolWidget;
 
     namespace Tools::MapCreationWizard::Ui
     {
@@ -123,6 +124,7 @@ namespace Noggit::Ui::Windows
       QListWidget* _continents_table;
       QString _filter_name;
       QTabWidget* _right_side;
+      Noggit::Ui::ProceduralToolWidget* _procedural_tool;
 
       void applyFilterSearch(const QString& name, int type, int expansion, bool wmo_maps);
 

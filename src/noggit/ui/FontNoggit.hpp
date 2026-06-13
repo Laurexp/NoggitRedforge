@@ -82,6 +82,7 @@ namespace Noggit
         TOOL_OBJECT_EDITOR = 0xF8A4,
         TOOL_MINIMAP_EDITOR = 0xF8A5,
         TOOL_STAMP = 0xF8A6,
+        TOOL_PATH = 0xf018,
         SETTINGS = 0xf8a7,
         FAVORITE = 0xf8a8,
         VISIBILITY_WMO = 0xf8a9,

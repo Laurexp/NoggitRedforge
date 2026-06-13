@@ -6,7 +6,7 @@
 # ░███  ░░█████ ░░███     ███ ░░███  ░░███ ░░███  ░░███  ░███     ░███        ░███    ░███  ░███ ░   █ ░███    ███
 # █████  ░░█████ ░░░███████░   ░░█████████  ░░█████████  █████    █████       █████   █████ ██████████ ██████████
 #░░░░░    ░░░░░    ░░░░░░░      ░░░░░░░░░    ░░░░░░░░░  ░░░░░    ░░░░░       ░░░░░   ░░░░░ ░░░░░░░░░░ ░░░░░░░░░░
-CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 CMAKE_POLICY(SET CMP0057 NEW) # "Support new IN_LIST if() operator."
 SET(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -402,6 +402,7 @@ IF(WIN32)
 ENDIF()
 
 SET_PROPERTY(TARGET noggit PROPERTY AUTOMOC ON)
+# set_target_properties(noggit PROPERTIES OUTPUT_NAME "NoggitIsaacRedforged")
 
 IF(APPLE)
   TARGET_INCLUDE_DIRECTORIES(noggit PRIVATE /usr/local/Cellar/llvm/13.0.0_2/include/c++/v1/)

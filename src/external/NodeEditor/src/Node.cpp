@@ -234,13 +234,13 @@ onPortAdded(PortType port_type, PortIndex port_index)
   if (port_type == PortType::In)
   {
     const unsigned int nNewIn = _nodeDataModel->nPorts(PortType::In);
-    _nodeGeometry._nSources = nNewIn;
+    _nodeGeometry._nSinks = nNewIn;
     _nodeState._inConnections.resize(nNewIn);
   }
   else if (port_type == PortType::Out)
   {
     const unsigned int nNewOut = _nodeDataModel->nPorts(PortType::Out);
-    _nodeGeometry._nSinks = nNewOut;
+    _nodeGeometry._nSources = nNewOut;
     _nodeState._outConnections.resize( nNewOut );
   }
 
@@ -270,7 +270,7 @@ onPortRemoved(PortType port_type, PortIndex port_index)
       Q_EMIT requestConnectionRemove(*connection);
     }
 
-    _nodeGeometry._nSources = _nodeDataModel->nPorts(PortType::In);
+    _nodeGeometry._nSinks = _nodeDataModel->nPorts(PortType::In);
 
     if (in_connections.empty())
       _nodeState._inConnections.erase(_nodeState._inConnections.begin() + port_index);
@@ -294,7 +294,7 @@ onPortRemoved(PortType port_type, PortIndex port_index)
     }
 
     const unsigned int nNewOut = _nodeDataModel->nPorts(PortType::Out);
-    _nodeGeometry._nSinks = nNewOut;
+    _nodeGeometry._nSources = nNewOut;
 
     if (out_connections.empty())
       _nodeState._outConnections.erase(_nodeState._outConnections.begin() + port_index);

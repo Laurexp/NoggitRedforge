@@ -11,6 +11,7 @@
 #include <noggit/ui/minimap_widget.hpp>
 #include <noggit/ui/tools/MapCreationWizard/Ui/MapCreationWizard.hpp>
 #include <noggit/ui/tools/UiCommon/StackedWidget.hpp>
+#include <noggit/ui/ProceduralToolWidget.hpp>
 #include <noggit/ui/UidFixWindow.hpp>
 #include <noggit/ui/windows/about/About.h>
 #include <noggit/ui/windows/noggitWindow/components/BuildMapListComponent.hpp>
@@ -91,6 +92,7 @@ namespace Noggit::Ui::Windows
 
     _about = new about(this);
     _settings = new settings(this);
+    _procedural_tool = new Noggit::Ui::ProceduralToolWidget(this);
 
     _menuBar = menuBar();
 
@@ -119,6 +121,13 @@ namespace Noggit::Ui::Windows
     QObject::connect(about_action, &QAction::triggered, [&]
                      {
                        _about->show();
+                     }
+    );
+
+    auto procedural_action(file_menu->addAction("Procedural Terrain Gen"));
+    QObject::connect(procedural_action, &QAction::triggered, [&]
+                     {
+                       _procedural_tool->show();
                      }
     );
 
@@ -239,6 +248,10 @@ namespace Noggit::Ui::Windows
     { promptUidFixFailure(); });
     connect(_settings, &settings::saved, [this]()
     { if (_map_view) _map_view->onSettingsSave(); });
+
+    if (_procedural_tool) {
+        _procedural_tool->setMapView(_map_view);
+    }
 
     // _app_toolbar = new QToolBar("Application", this);
     // _app_toolbar->setOrientation(Qt::Horizontal);

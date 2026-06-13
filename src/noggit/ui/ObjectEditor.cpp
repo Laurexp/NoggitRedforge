@@ -315,6 +315,7 @@ namespace Noggit
       selectionOptions_layout->addWidget(multi_select_movement_box);
 
       QPushButton *rotEditorButton = new QPushButton("Pos/Rotation Editor", this);
+      QPushButton *deselectButton = new QPushButton("Deselect All", this);
       // replaced by a button
       // QPushButton *visToggleButton = new QPushButton("Toggle Hidden Models Visibility", this);
       QPushButton *clearListButton = new QPushButton("Clear Hidden Models List", this);
@@ -345,6 +346,7 @@ namespace Noggit
       layout->addWidget(pasteBox);
       layout->addWidget(selectionOptionsBox);
       layout->addWidget(rotEditorButton);
+      layout->addWidget(deselectButton);
       // layout->addWidget(visToggleButton);
       layout->addWidget(clearListButton);
       layout->addWidget(clearGroupsButton);
@@ -517,6 +519,10 @@ namespace Noggit
 
       connect(light_options_btn, &QPushButton::clicked, [=]() {
           lightObjectEditor->show();
+      });
+
+      connect(deselectButton, &QPushButton::clicked, [=]() {
+          if (world) world->reset_selection();
       });
 
       /*

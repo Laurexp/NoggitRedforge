@@ -109,6 +109,12 @@ namespace Noggit
 
       QMimeData* mimeData = new QMimeData;
       mimeData->setText(QString(_filename.c_str()));
+      
+      QByteArray pointerData;
+      pointerData.resize(sizeof(void*));
+      void* ptr = this;
+      memcpy(pointerData.data(), &ptr, sizeof(void*));
+      mimeData->setData("application/x-current-texture-ptr", pointerData);
 
       QDrag* drag = new QDrag(this);
       drag->setMimeData(mimeData);
@@ -127,10 +133,24 @@ namespace Noggit
 
     void current_texture::dropEvent(QDropEvent* event)
     {
-      std::string filename = event->mimeData()->text().toStdString();
+      std::string incoming_filename = event->mimeData()->text().toStdString();
 
-      set_texture(filename);
-      emit texture_dropped(filename);
+      if (event->mimeData()->hasFormat("application/x-current-texture-ptr")) {
+          QByteArray pointerData = event->mimeData()->data("application/x-current-texture-ptr");
+          if (pointerData.size() == sizeof(void*)) {
+              void* ptr = nullptr;
+              memcpy(&ptr, pointerData.constData(), sizeof(void*));
+              current_texture* source_tex = static_cast<current_texture*>(ptr);
+              if (source_tex && source_tex != this) {
+                  std::string my_old_filename = this->filename();
+                  source_tex->set_texture(my_old_filename);
+                  emit source_tex->texture_dropped(my_old_filename);
+              }
+          }
+      }
+
+      set_texture(incoming_filename);
+      emit texture_dropped(incoming_filename);
     }
 
     void current_texture::unselect()
